@@ -1,0 +1,3 @@
+[submodule "Plugins/NimForUE"]
+	path = Plugins/NimForUE
+	url = https://github.com/jmgomez/NimForUE
