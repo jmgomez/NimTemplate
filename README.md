@@ -23,6 +23,7 @@ git clone https://github.com/jmgomez/NimTemplate.git --recurse-submodules
 cd NimTemplate/Plugins/NimForUE
 ```
 3. Set up the project using nimble:
+
 ```nimble setup```
 
 This will build the project and all the necessary Nim files.
