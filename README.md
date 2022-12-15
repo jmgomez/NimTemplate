@@ -31,7 +31,9 @@ This will build the project and all the necessary Nim files.
 4. Open NimTemplate.uproject
 
 5. When UE loads the plugin it will automatically generate all the bindings for the plugin listed in your game.
+
 6. Once the bindings are generated, open game.nim in the root of the NimForUE directory in VSCode. There should be a task available to build the game DLL.
+
 7.Restart the editor, this is only necessary the first time you compile your game. Now you should be ready to go!
 
 
