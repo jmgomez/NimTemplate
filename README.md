@@ -12,7 +12,7 @@ NimForUE is Nim plugin for UE5 that provides native performance, hot reloading, 
 
 ## Getting Started in Windows:
 
-Make sure you have Unreal Engine 5.1 installed and Nim 1.6.10 or above.
+Make sure you have Unreal Engine 5.1 installed and Nim 1.6.10 or above is in your path.
 
 1. Clone the repository and its submodules:
 ```
