@@ -34,7 +34,9 @@ This will build the project and all the necessary Nim files.
 
 6. Once the bindings are generated, open game.nim in the root of the NimForUE directory in VSCode. There should be a task available to build the game DLL.
 
-7.Restart the editor, this is only necessary the first time you compile your game. Now you should be ready to go!
+7. Restart the editor, this is only necessary the first time you compile your game.
+
+8. In the editor, open Window > Place Actors, and type "Nim", drag and drop the "Nim Character" to the scene and press Play. Click into the Viewport and you can control the character!
 
 
 
