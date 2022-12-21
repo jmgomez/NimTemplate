@@ -32,27 +32,27 @@ uClass ANimCharacter of ACharacter:
     proc beginPlay() = 
       discard
       let pc = ueCast[APlayerController](self.getController())
-      # if pc.isNotNil():
-      #   let subsystem = getSubsystem[UEnhancedInputLocalPlayerSubsystem](pc).get()
-      #   subsystem.addMappingContext(self.defaultMappingContext, 0)
-      #   self.inputComponent.bindAction(self.jumpAction, Triggered, self, n"jump")
-      #   self.inputComponent.bindAction(self.jumpAction, Completed, self, n"stopJumping")
-      #   self.inputComponent.bindAction(self.moveAction, Triggered, self, n"move")
-      #   self.inputComponent.bindAction(self.lookAction, Triggered, self, n"look")
+      if pc.isNotNil():
+        let subsystem = getSubsystem[UEnhancedInputLocalPlayerSubsystem](pc).get()
+        subsystem.addMappingContext(self.defaultMappingContext, 0)
+        self.inputComponent.bindAction(self.jumpAction, ETriggerEvent.Triggered, self, n"jump")
+        self.inputComponent.bindAction(self.jumpAction, Completed, self, n"stopJumping")
+        self.inputComponent.bindAction(self.moveAction, ETriggerEvent.Triggered, self, n"move")
+        self.inputComponent.bindAction(self.lookAction, ETriggerEvent.Triggered, self, n"look")
 
-  #   proc move(value: FInputActionValue) = 
-  #     let 
-  #       movementVector = value.axis2D()
-  #       rot = self.getControlRotation()
-  #       rightDir = FRotator(roll: rot.roll, yaw: rot.yaw).getRightVector()
-  #       forwardDir = FRotator(yaw: rot.yaw).getForwardVector()
-  #     self.addMovementInput(rightDir, movementVector.x, false) 
-  #     self.addMovementInput(forwardDir, movementVector.y, false) 
+    proc move(value: FInputActionValue) = 
+      let 
+        movementVector = value.axis2D()
+        rot = self.getControlRotation()
+        rightDir = FRotator(roll: rot.roll, yaw: rot.yaw).getRightVector()
+        forwardDir = FRotator(yaw: rot.yaw).getForwardVector()
+      self.addMovementInput(rightDir, movementVector.x, false) 
+      self.addMovementInput(forwardDir, movementVector.y, false) 
 
-  #   proc look(value: FInputActionValue) =
-  #     let lookAxis = value.axis2D()
-  #     self.addControllerYawInput(lookAxis.x)
-  #     self.addControllerPitchInput(lookAxis.y)
+    proc look(value: FInputActionValue) =
+      let lookAxis = value.axis2D()
+      self.addControllerYawInput(lookAxis.x)
+      self.addControllerPitchInput(lookAxis.y)
 
 uClass ANimGameMode of AGameModeBase:
   proc constructor(init:FObjectInitializer) = #Similar to default but allows you to write full nim code
