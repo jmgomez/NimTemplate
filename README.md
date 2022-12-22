@@ -36,7 +36,7 @@ This will build the project and all the necessary Nim files.
 
 7. Restart the editor, this is only necessary the first time you compile your game.
 
-8. In the editor, open Window > Place Actors, and type "Nim", drag and drop the "Nim Character" to the scene and press Play. Click into the Viewport and you can control the character!
+8. Click play, click into the viewport to control the character. You're all set!
 
 
 
