@@ -40,5 +40,5 @@ This will build the project and all the necessary Nim files.
 
 
 
-<img src="https://uc13b33d7d1e9ee3fe5817e6e048.previews.dropboxusercontent.com/p/thumb/ABvPwCeTIIppCPy77orA5CqAzP-ckIoDTUi89tz-DwwLK4Bcgsb1YOLCgu90JeimBkEFPHXONFid8y2WszEFK_zj9CixHLW6YHjWgwkwTGvWOt-hJqogXMaw4hSQkt0y0JWn1DUGopZYlNZUQTsqpWrpG2WfoJSBJKYCjN6CBSPFLNJ-2xrpJ2flCwL2W8D_Xwt7Q0KzXOKsFrE0CAglFjQ4BU_MwFvC0RvS1MNj-fg1-Jtvy1irPQAMch24u454wQ48ogUGOrNedDKKwZckWWc2BgZkugmb3aC-EYPb8kHEfmiB6PXE0c5hMDGMhEn6EAKOjiN7X7OpVSYSy1QFK95uBo1Wqs5sSzD0dhKgxsvgT-qxUdVFPatpY1TsjTo7sOqihYBm9_W3_FKed4ZjjJ0pKrfaDRmQQT-dBZ6oY8QFlQ/p.jpeg" width="720"  >
+<img src="https://pbs.twimg.com/media/FkB6V57WAAATbP4?format=jpg&name=4096x4096" width="720"  >
 
