@@ -27,10 +27,10 @@ uClass ANimCharacter of ACharacter:
     cameraBoom.targetArmLength = 400
     cameraBoom.busePawnControlRotation = true
     followCamera.bUsePawnControlRotation = true
+    
   
   ufuncs():
     proc beginPlay() = 
-      discard
       let pc = ueCast[APlayerController](self.getController())
       if pc.isNotNil():
         let subsystem = getSubsystem[UEnhancedInputLocalPlayerSubsystem](pc).get()
@@ -39,7 +39,6 @@ uClass ANimCharacter of ACharacter:
         self.inputComponent.bindAction(self.jumpAction, ETriggerEvent.Completed, self, n"stopJumping")
         self.inputComponent.bindAction(self.moveAction, ETriggerEvent.Triggered, self, n"move")
         self.inputComponent.bindAction(self.lookAction, ETriggerEvent.Triggered, self, n"look")
-
     proc move(value: FInputActionValue) = 
       let 
         movementVector = value.axis2D()

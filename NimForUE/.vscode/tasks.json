@@ -7,7 +7,7 @@
       "options": {
         "cwd": "../Plugins/NimForUE/"
       },
-      "label": "echo",
+      "label": "compile game",
       "type": "shell",
       "command": "./nue game",
       "problemMatcher": [],
