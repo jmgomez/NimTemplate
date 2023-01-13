@@ -15,7 +15,7 @@ uClass ANimCharacter of ACharacter:
     (jumpAction, moveAction, lookAction) : UInputActionPtr
 
   defaults: # default values for properties on the cdo
-    capsuleComponent.capsuleRadius = 42
+    capsuleComponent.capsuleRadius = 4
     capsuleComponent.capsuleHalfHeight = 96
     bUseControllerRotationYaw = false
     characterMovement.jumpZVelocity = 700
