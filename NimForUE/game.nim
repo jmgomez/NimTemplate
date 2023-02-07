@@ -1,6 +1,8 @@
 include unrealprelude
 import enhancedinput
 
+import examples/asyncexample
+
 
 uClass ANimCharacter of ACharacter:
   (config=Game)
