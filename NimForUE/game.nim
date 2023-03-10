@@ -10,8 +10,6 @@ uClass ANimCharacter of ACharacter:
     cameraBoom : USpringArmComponentPtr 
   uprops(EditAnywhere, BlueprintReadOnly, DefaultComponent, Attach=(cameraBoom, SpringEndpoint), Category = Camera):
     followCamera : UCameraComponentPtr
-  uprops(EditAnywhere, BlueprintReadOnly, DefaultComponent, Category = Input):
-    inputComponent : UEnhancedInputComponentPtr
   uprops(EditAnywhere, BlueprintReadOnly, Category = Input):
     defaultMappingContext : UInputMappingContextPtr
     (jumpAction, moveAction, lookAction) : UInputActionPtr
@@ -29,18 +27,21 @@ uClass ANimCharacter of ACharacter:
     cameraBoom.targetArmLength = 400
     cameraBoom.busePawnControlRotation = true
     followCamera.bUsePawnControlRotation = true
-    
   
-  ufuncs():
-    proc beginPlay() = 
+  override:
+    proc setupPlayerInputComponent(playerInputComponent : UInputComponentPtr) = 
       let pc = ueCast[APlayerController](self.getController())
       if pc.isNotNil():
+        let inputComponent = ueCast[UEnhancedInputComponent](playerInputComponent)
         let subsystem = getSubsystem[UEnhancedInputLocalPlayerSubsystem](pc).get()
         subsystem.addMappingContext(self.defaultMappingContext, 0)
-        self.inputComponent.bindAction(self.jumpAction, ETriggerEvent.Triggered, self, n"jump")
-        self.inputComponent.bindAction(self.jumpAction, ETriggerEvent.Completed, self, n"stopJumping")
-        self.inputComponent.bindAction(self.moveAction, ETriggerEvent.Triggered, self, n"move")
-        self.inputComponent.bindAction(self.lookAction, ETriggerEvent.Triggered, self, n"look")
+        inputComponent.bindAction(self.jumpAction, ETriggerEvent.Triggered, self, n"jump")
+        inputComponent.bindAction(self.jumpAction, ETriggerEvent.Completed, self, n"stopJumping")
+        inputComponent.bindAction(self.moveAction, ETriggerEvent.Triggered, self, n"move")
+        inputComponent.bindAction(self.lookAction, ETriggerEvent.Triggered, self, n"look")
+
+  
+  ufuncs:
     proc move(value: FInputActionValue) = 
       let 
         movementVector = value.axis2D()
