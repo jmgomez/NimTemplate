@@ -12,6 +12,10 @@
 	],
 	"Plugins": [
 		{
+			"Name": "NimForUE", 
+			"Enabled": true
+		},
+		{
 			"Name": "ModelingToolsEditorMode",
 			"Enabled": true,
 			"TargetAllowList": [
