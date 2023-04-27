@@ -30,6 +30,7 @@ uClass ANimCharacter of ACharacter:
   
   override:
     proc setupPlayerInputComponent(playerInputComponent : UInputComponentPtr) = 
+      printString self, "setupPlayerInputComponent !"
       let pc = ueCast[APlayerController](self.getController())
       if pc.isNotNil():
         let inputComponent = ueCast[UEnhancedInputComponent](playerInputComponent)

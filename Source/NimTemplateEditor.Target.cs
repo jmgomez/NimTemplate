@@ -11,5 +11,7 @@ public class NimTemplateEditorTarget : TargetRules
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_1;
 		ExtraModuleNames.Add("NimTemplate");
+		bOverrideBuildEnvironment = true;
+		AdditionalCompilerArguments = "/Zc:strictStrings-";
 	}
 }
