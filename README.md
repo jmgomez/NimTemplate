@@ -8,7 +8,11 @@ Template project for NimForUE: https://github.com/jmgomez/NimForUE
 NimForUE is Nim plugin for UE5 that provides native performance, hot reloading, and full interop between C++ and Blueprints. With this plugin, you can extend any UE class in Nim and then further extend it in Blueprint without restarting the editor. This allows for seamless integration with common UE workflows, allowing you to take advantage of the power of Nim in your UE projects.
 
 
+**Update**
 
+We are transitioning to a new version of Nim, see this instructions to get it to work in the mean time: 
+https://github.com/jmgomez/NimForUE/issues/20
+PRs with documentation welcome!
 
 ## Getting Started in Windows:
 
