@@ -5,6 +5,7 @@ import examples/asyncexample
 
 
 uClass ANimCharacter of ACharacter:
+  (Reinstance)
   (config=Game)
   uprops(EditAnywhere, BlueprintReadOnly, DefaultComponent, Category = Camera):
     cameraBoom : USpringArmComponentPtr 
@@ -28,18 +29,17 @@ uClass ANimCharacter of ACharacter:
     cameraBoom.busePawnControlRotation = true
     followCamera.bUsePawnControlRotation = true
   
-  override:
-    proc setupPlayerInputComponent(playerInputComponent : UInputComponentPtr) = 
-      printString self, "setupPlayerInputComponent !"
-      let pc = ueCast[APlayerController](self.getController())
-      if pc.isNotNil():
-        let inputComponent = ueCast[UEnhancedInputComponent](playerInputComponent)
-        let subsystem = getSubsystem[UEnhancedInputLocalPlayerSubsystem](pc).get()
-        subsystem.addMappingContext(self.defaultMappingContext, 0)
-        inputComponent.bindAction(self.jumpAction, ETriggerEvent.Triggered, self, n"jump")
-        inputComponent.bindAction(self.jumpAction, ETriggerEvent.Completed, self, n"stopJumping")
-        inputComponent.bindAction(self.moveAction, ETriggerEvent.Triggered, self, n"move")
-        inputComponent.bindAction(self.lookAction, ETriggerEvent.Triggered, self, n"look")
+  proc setupPlayerInputComponent(playerInputComponent : UInputComponentPtr) {.virtual, override.}  =    
+    printString self, "setupPlayerInputComponent !"
+    let pc = ueCast[APlayerController](self.getController())
+    if pc.isNotNil():
+      let inputComponent = ueCast[UEnhancedInputComponent](playerInputComponent)
+      let subsystem = getSubsystem[UEnhancedInputLocalPlayerSubsystem](pc).get()
+      subsystem.addMappingContext(self.defaultMappingContext, 0)
+      inputComponent.bindAction(self.jumpAction, ETriggerEvent.Triggered, self, n"jump")
+      inputComponent.bindAction(self.jumpAction, ETriggerEvent.Completed, self, n"stopJumping")
+      inputComponent.bindAction(self.moveAction, ETriggerEvent.Triggered, self, n"move")
+      inputComponent.bindAction(self.lookAction, ETriggerEvent.Triggered, self, n"look")
 
   
   ufuncs:
