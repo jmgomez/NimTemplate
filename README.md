@@ -8,12 +8,6 @@ Template project for NimForUE: https://github.com/jmgomez/NimForUE
 NimForUE is Nim plugin for UE5 that provides native performance, hot reloading, and full interop between C++ and Blueprints. With this plugin, you can extend any UE class in Nim and then further extend it in Blueprint without restarting the editor. This allows for seamless integration with common UE workflows, allowing you to take advantage of the power of Nim in your UE projects.
 
 
-**Update**
-
-We are transitioning to a new version of Nim, see this instructions to get it to work in the mean time: 
-https://github.com/jmgomez/NimForUE/issues/20
-PRs with documentation welcome!
-
 ## Getting Started in Windows:
 
 Make sure you have Unreal Engine 5.1 installed and Nim 1.6.10 or above is in your path.
@@ -26,13 +20,16 @@ git clone https://github.com/jmgomez/NimTemplate.git --recurse-submodules
 ```
 cd NimTemplate/Plugins/NimForUE
 ```
-3. Set up the project using nimble:
+3. Set up `nue`, the NimForUE build tool using nimble:
 
-```nimble setup```
+```nimble nue```
+
+4. Setup NimForUE by running
+```./nue setup```
 
 This will build the project and all the necessary Nim files.
 
-4. Open NimTemplate.uproject (or run `./nue starteditor`)
+5. Open NimTemplate.uproject (or run `./nue starteditor`)
 
 5. Click play, click into the viewport to control the character. You're all set!
 
