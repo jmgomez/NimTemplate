@@ -12,6 +12,7 @@ public class NimTemplateTarget : TargetRules
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_1;
 		ExtraModuleNames.Add("NimTemplate");
 		bOverrideBuildEnvironment = true;
-		AdditionalCompilerArguments = "/Zc:strictStrings-";
+        if (Target.Platform == UnrealTargetPlatform.Win64)
+            AdditionalCompilerArguments = "/Zc:strictStrings-";
 	}
 }

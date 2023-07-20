@@ -1,8 +1,6 @@
 include unrealprelude
 import enhancedinput
 
-import examples/asyncexample
-
 
 uClass ANimCharacter of ACharacter:
   (Reinstance)
@@ -40,6 +38,7 @@ uClass ANimCharacter of ACharacter:
       inputComponent.bindAction(self.jumpAction, ETriggerEvent.Completed, self, n"stopJumping")
       inputComponent.bindAction(self.moveAction, ETriggerEvent.Triggered, self, n"move")
       inputComponent.bindAction(self.lookAction, ETriggerEvent.Triggered, self, n"look")
+      
 
   
   ufuncs:
