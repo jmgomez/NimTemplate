@@ -1,5 +1,5 @@
 include unrealprelude
-import enhancedinput
+import enhancedinput/enhancedinput
 
 
 uClass ANimCharacter of ACharacter:
@@ -32,7 +32,7 @@ uClass ANimCharacter of ACharacter:
     let pc = ueCast[APlayerController](self.getController())
     if pc.isNotNil():
       let inputComponent = ueCast[UEnhancedInputComponent](playerInputComponent)
-      let subsystem = getSubsystem[UEnhancedInputLocalPlayerSubsystem](pc).get()
+      let subsystem = tryGetSubsystem[UEnhancedInputLocalPlayerSubsystem](pc).get()
       subsystem.addMappingContext(self.defaultMappingContext, 0)
       inputComponent.bindAction(self.jumpAction, ETriggerEvent.Triggered, self, n"jump")
       inputComponent.bindAction(self.jumpAction, ETriggerEvent.Completed, self, n"stopJumping")
