@@ -26,7 +26,7 @@ proc setPath(pluginDir: string) =
   switch("path", pluginDir / "src/nimforue")
   switch("path", pluginDir / "src/nimforue/game")
   switch("path", pluginDir / "src/nimforue/unreal")
-  switch("path", pluginDir / "src/nimforue/unreal/bindings/imported")
+  switch("path", pluginDir / "src/nimforue/unreal/bindings/exported")
   switch("path", pluginDir / "src/nimforue/vm")
   when defined(nimsuggest): #only needed for script.nim and nimsuggest
     switch("path", pluginDir / "src/nimforue/unreal/bindings/vm")

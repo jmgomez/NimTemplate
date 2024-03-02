@@ -57,7 +57,7 @@ uClass ANimCharacter of ACharacter:
       self.addControllerPitchInput(lookAxis.y)
 
 uClass ANimGameMode of AGameModeBase:
-  proc constructor(init:FObjectInitializer) = #Similar to default but allows you to write full nim code
+  proc constructor(initializer: FObjectInitializer) = #Similar to default but allows you to write full nim code
     let classFinder = makeClassFinder[ACharacter]("/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter")
     self.defaultPawnClass = classFinder.class
 
