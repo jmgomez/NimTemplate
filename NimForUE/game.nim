@@ -3,7 +3,6 @@ import enhancedinput/enhancedinput
 
 
 uClass ANimCharacter of ACharacter:
-  (Reinstance)
   (config=Game)
   uprops(EditAnywhere, BlueprintReadOnly, DefaultComponent, Category = Camera):
     cameraBoom : USpringArmComponentPtr 
@@ -28,7 +27,6 @@ uClass ANimCharacter of ACharacter:
     followCamera.bUsePawnControlRotation = true
   
   proc setupPlayerInputComponent(playerInputComponent : UInputComponentPtr) {.virtual, override.}  =    
-    printString self, "setupPlayerInputComponent !"
     let pc = ueCast[APlayerController](self.getController())
     if pc.isNotNil():
       let inputComponent = ueCast[UEnhancedInputComponent](playerInputComponent)
