@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Plugins/NimForUE"
+		},
+		{
+			"path": "../Plugins/NimForUE/src/nimforue/unreal/bindings/imported"
+		}
+	],
+	"settings": {}
+}
