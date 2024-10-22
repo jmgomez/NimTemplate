@@ -27,8 +27,7 @@ uSection():
 
       proc setDone(bIsChecked: bool) =
         self.bDone = bIsChecked
-        let listvm = getViewModelFromCollection(UTodoListViewModel, self.context)
-        listvm.broadcastFieldValueChanged(n "items")
+        UTodoListViewModel.broadcastFieldValueChanged(self.context, n "progressText")
 
     ufuncs(Static):
       proc newTodoItemViewModel(title: FText, bDone: bool, context: UObjectPtr): UTodoItemViewModelPtr =
@@ -51,6 +50,10 @@ uSection():
 
       proc clearItems() =
         self.items = makeTArray[UTodoItemViewModelPtr]()
+
+    ufunc(BlueprintPure, FieldNotify):
+      func progressText(): FText =
+        (&"{self.items.filterIt(it.bDone).num} of {self.items.num}").toText()
 
 
 uClass ANimConfHUD of AHUD:
